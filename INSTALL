@@ -1,0 +1,53 @@
+Installing giix 
+===============
+
+Before installing
+-----------------
+
+1) Make sure you read the Yii guide at <http://www.yiiframework.com/doc/guide>.
+2) Read the Gii documentation at <http://www.yiiframework.com/doc/api/GiiModule>.
+3) Read giix README file. Please give special attention to the "requirements" section.
+
+Installing
+----------
+
+1) Extract the directory "giix" from the
+downloaded archive into your application's protected/extensions directory.
+
+2) Configure the gii generator path in your application, like:
+'modules' => array(
+	'gii' => array(
+		'class' => 'system.gii.GiiModule',
+		'generatorPaths' => array(
+			'ext.giix.generators', // giix generators
+		),
+	),
+),
+
+3) Configure your application to automatically load the giix component classes
+when needed, like:
+'import' => array(
+	...
+	'ext.giix.components.*', // giix components
+),
+
+4) Register the giix messages directory, like the example below.
+Note: This feature is pending on Yii core (as of Yii 1.1.8 revision 3364). You will need to patch your Yii instalation.
+See <http://code.google.com/p/yii/issues/detail?id=2624> for details and the patch.
+'components' => array(
+	...
+	'messages' => array (
+		// Pending on core: http://code.google.com/p/yii/issues/detail?id=2624
+		'extensionBasePaths' => array(
+			'giix' => 'ext.giix.messages', // giix messages directory.
+		),
+	),
+),
+
+It is recommended to set at least the 'password' and 'ipFilters' properties
+in gii for security.
+For more information see the gii documentation at <http://www.yiiframework.com/doc/api/GiiModule>.
+
+Additionaly, you may remove the entire 'generators' directory and generator
+configuration (step 2 above) when releasing your Web application for improved
+security.

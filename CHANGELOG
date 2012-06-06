@@ -1,0 +1,90 @@
+giix Change Log
+===============
+
+Version 1.10, to be released
+----------------------------
+Chg: Better directory organization. Now giix have its own root directory.
+Bug: Fixes issue 23: Removed undefined variables from GxActiveRecord::saveRelated.
+Chg: Removed the message translation from the generated view files.
+Enh: Added a message category to the Yii::t calls.
+Enh: Added the configuration file for generating message translations.
+Enh: Added instructions and details about the patch and messages directory configuration.
+Bug: GxActiveRecord::pkSeparator and GxActiveRecord::repColumnsSeparator shouldn't be static.
+Bug: Now generating the proper label for the relation in the view "_view".
+
+Version 1.9, 2011-07-06
+----------------------------
+Bug: GxActiveRecord::getRelationLabel supported only relations and (table-based) attributes. Support for class properties has been added.
+Chg: The method attributeLabels in the generated base model now have the FK fields set to null by default.
+Chg: The method attributeLabels in the generated base model now have the relations of the model. They are set to null by default.
+Chg: The method GxActiveRecord::label doesn't have the second parameter "ucwords" anymore. The same happens when it is overriden on the generated base model.
+Chg: The method GxActiveRecord::getRelationLabel doesn't have the third parameter "ucwords" anymore.
+Chg: Now the method GxActiveRecord::getRelationLabel gives priority to the explicitly defined label in the model.
+
+Version 1.8, 2011-06-20
+----------------------------
+Enh: Added support to active record labels.
+
+Version 1.7, 2011-06-02
+----------------------------
+Enh: Updated the code from Yii to version 1.1.7 (r3135).
+Enh: Updated the code from Yii in the default template files and generator's index views to version 1.1.7 (r3135).
+Bug: Fixed bug #10. Added proper support to 'uncheckValue'.
+Bug: Fixes issue #11. Now the generated model::search method uses the current instance of the model and allows the use of custom criteria.
+
+Version 1.6, 2011-05-09
+----------------------------
+Bug: Wrong pivot class name was generated when there were table prefixes.
+Enh: Better support to boolean values: formatted display in view "view".
+Bug: Added proper parameter checks in GxActiveRecord::__toString.
+Chg: Raised Yii version in "requirements".
+Enh: Added support for entering PK values. See http://code.google.com/p/yii/issues/detail?id=1770.
+Chg: New default value for GxActiveRecord::saveMultiple: 'detectRelations' option is now false by default.
+Enh: Added GxActiveRecord::fillPkColumnNames.
+Enh: Now GxController::loadModel supports composite PK, has autodetection features and can be used with any attribute (column).
+
+Version 1.5, 2011-05-06
+----------------------------
+Chg: GxController extends again from Controller (reverted from version 1.2).
+Enh: Now GxController::performAjaxValidation supports multiple models.
+Bug: Removed the code for saving the main model and committing the transaction from the loop in GxActiveRecord::saveWithRelated.
+Bug: Fixed a bug where the function would return instead of continue iterating in the loop in GxActiveRecord::saveWithRelated.
+Bug: Do not swallow exceptions anymore in GxActiveRecord::saveWithRelated.
+Bug: Now more code is wrapped in the try-catch block to protect the integrity of the transaction in GxActiveRecord::saveWithRelated.
+Bug: Fixed issue 5.
+Enh: Introduced GxActiveRecord::saveMultiple.
+Chg: Removed the "cancel" button from the _form view.
+
+Version 1.4, 2010-12-30
+----------------------------
+Bug: Saving related MANY_MANY relations could delete or insert wrong data since the check on current relations was not necessarily made against the database.
+
+Version 1.3, 2010-12-23
+----------------------------
+New: Added native support for saving MANY_MANY relations with the new method GxActiveRecord::saveWithRelated.
+New: Added method GxActiveRecord::pivotModels.
+New: Added automatic detection of HAS_MANY and MANY_MANY relations in the POST with the new method GxController::getRelatedData.
+New: The generated model now have the pivot class names in its pivotModels method.
+New: The generated controller now have support for saving MANY_MANY relations automatically.
+
+Version 1.2, 2010-12-14
+----------------------------
+Enh: More inline styling and formatting is removed from the generated code.
+Enh: Now the breadcrumb will contain the string representation of the model instance instead of the primary key value, when appropriate.
+Enh: Now the page heading will contain the string representation of the model instance instead of the primary key value, when appropriate.
+Bug: Fixed a bug were the action name were translated in the breadcrumb link.
+Chg: Now GxController extends directly from CController. Class Controller is no longer necessary.
+Enh: I18n support added to some messages.
+
+Version 1.1.1, 2010-12-10
+----------------------------
+Enh: All inline styling and formatting is removed from the generated code.
+Bug: GxActiveForm::enableAjaxValidation value was passed as a string instead of as a boolean in _form.php, causing it to ever evaluate to true. This caused a new record to be added in every ajax validation post (There weren't a call to GxController::performAjaxValidation).
+Chg: Removed support for enum fields.
+Bug: Now all the output data is HTML encoded.
+New: Added method GxHtml::encodeEx.
+
+Version 1.0, 2010-11-12
+----------------------------
+Initial release, based on gii-template-collection (gtc).
+Updated up to gtc r107 and yii/gii 1.1.3 r2247.

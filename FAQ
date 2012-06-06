@@ -1,0 +1,33 @@
+giix FAQ: Frequently Asked Questions
+====================================
+
+How to install giix?
+--------------------
+
+See the README file before installing giix.
+See INSTALL file for instructions.
+Read the Yii guide at <http://www.yiiframework.com/doc/guide>.
+Read the gii documentation at <http://www.yiiframework.com/doc/api/GiiModule>.
+
+How to use giix?
+----------------
+
+See the README file before using giix.
+
+After installing, you will see the giix generators on the gii page.
+The giix generators' names start with "giix".
+
+Read the Yii guide at <http://www.yiiframework.com/doc/guide>.
+Read the gii documentation at <http://www.yiiframework.com/doc/api/GiiModule>.
+
+I need help! Where should I go?
+-------------------------------
+
+You can ask you question in the forum discussion for giix at
+<http://www.yiiframework.com/forum/index.php?/topic/13154-giix-%E2%80%94-gii-extended/>.
+Please notice that support is given mainly by the community.
+
+giix is not working. How do I report a bug?
+-------------------------------------------
+
+You can report bugs at <http://code.google.com/p/giix/issues/list>.

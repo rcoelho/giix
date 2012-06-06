@@ -1,0 +1,105 @@
+giix Readme
+===========
+
+giix version 1.10
+
+giix official website:    http://giix.org/
+
+giix on...
+Yii Extension Repository: http://www.yiiframework.com/extension/giix/
+Yii Forum:                http://www.yiiframework.com/forum/index.php?/topic/13154-giix-%E2%80%94-gii-extended/
+Google Code:              http://giix.googlecode.com/
+Ohloh:                    http://www.ohloh.net/p/giix
+
+giix is gii Extended, a code generator for Yii PHP framework.
+giix is inspired and based on gii-template-collection (gtc), by Herbert Maschke (thyseus).
+
+giix is free software and is dual-licensed under the terms of the new BSD License and under the terms of GNU GPL v3. See the LICENSE file.
+
+ACKNOWLEDGEMENTS
+----------------
+
+giix is inspired and uses code from Yii PHP framework and gii-template-collection.
+Many thanks to Qiang Xue, Herbert Maschke and the contributors of these software.
+
+Also, thanks for the huge help from:
+Thiago Talma (Athos)
+Gustavo Salomé Silva (Gustavo)
+
+FEATURES
+--------
+
+giix extends Yii's gii by providing:
+- Proper handling of related model attributes, rendering appropriate form fields based on relation type.
+- More support for HAS_MANY and MANY_MANY relations.
+- Native support for saving MANY_MANY relations with the new method GxActiveRecord::saveWithRelated.
+- Native support for saving multiple (related or not) records with the new method GxActiveRecord::saveMultiple.
+- Automatic string representation for a model via GxActiveRecord::representingColumn() and GxActiveRecord::__toString().
+- Better i18n support and easier to maintain: support to active record labels. You change the label once in the model and it is automatically updated in the views. This is especially useful for plurals.
+- Out-of-the box i18n support by using Yii::t().
+- Bundled translations (pending support on Yii core as of Yii 1.1.8. See <http://code.google.com/p/yii/issues/detail?id=2624> for details).
+- Appropriate form fields are rendered based on model attribute/table field data type.
+- Separated model and basemodel. Basemodel can be regenerated without overwriting your code in the model.
+- Smart methods can query your database for just the needed data (usually the primary key and the field with the string representantion), avoiding manual setup or a "select *".
+- Extensive use of default method parameters. Appropriate data is found automatically.
+- Some (incipient) support for tables with composite primary keys.
+- Generated code is completely free from styling and formatting. Your CSS controls the presentation.
+- Generated code is (almost) free of comments.
+- Well documented and commented source code. Ohloh says that 40% of the lines in the code are comments! You can understand and modify anything you want.
+
+And a lot more! Read the CHANGELOG file and the (richly commented) source code to fully leverage giix's power.
+
+Some of these features come from gtc.
+
+WARNINGS
+--------
+
+giix is not fully tested now, so please test your application and be careful using it.
+giix is still in development. Some changes may break backwards compatibility.
+
+Are you upgrading? Please don't forget to read the UPGRADE file for instructions!
+
+REQUIREMENTS
+------------
+
+Yii 1.1.9+ is required.
+
+giix should run with:
+- Yii 1.1.8+ (tested with revision 3364 + patch*)
+- Linux
+- Apache 2.2 or nginx 0.8+
+- MySQL 5.x
+- PHP 5.2+
+
+giix may run on other setups, but there is no official suppport for them.
+There is no planned official support for other setups, including Windows/IIS, XAMPP/etc or other DBMS.
+
+* You can use giix with Yii 1.1.8 if you patch your Yii installation with the patch provided in the issue 2624:
+<http://code.google.com/p/yii/issues/detail?id=2624>.
+
+INSTALLATION AND UPGRADING
+--------------------------
+
+Please see INSTALL and UPGRADE files for instructions.
+
+USING
+-----
+
+After installing, you will see the giix generators on the gii page.
+The giix generators' names start with "giix".
+Read the gii doumentation on how to use it
+<http://www.yiiframework.com/doc/api/GiiModule>.
+
+If you want to use the GxActiveRecord::saveWithRelated method, you must first generate
+the pivot model for the cross-reference table of the relationship.
+The pivot model class is the active record between two other active records that have
+a MANY_MANY relationship.
+If you have already generated models for every table in your schema, you are ready to
+use the method to save your MANY_MANY relations.
+If you use the support for saving MANY_MANY relations as generated, you will need to
+manually write code to support scenarios. This is an important security concern.
+
+DONATE
+------
+
+Go to <http://giix.org/> and donate via Flattr or via Paypal.
