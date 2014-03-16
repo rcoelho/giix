@@ -54,6 +54,9 @@ Some of these features come from gtc.
 WARNINGS
 --------
 
+Always download the latest release from the extension page at:
+http://www.yiiframework.com/extension/giix
+
 giix is not fully tested now, so please test your application and be careful using it.
 giix is still in development. Some changes may break backwards compatibility.
 
